@@ -1,0 +1,2 @@
+# SocieCiv
+Incremental Society Game
