@@ -1,27 +1,20 @@
-var gameData = {
-  gold: 0,
-  goldPerClick: 1,
-  goldPerClickCost: 10
+var RockData = {
+  rocks: 0,
+  rockPerClick: 1,
+  rockPerClickCost: 50
 }
 
-function mineGold() {
-  gameData.gold += gameData.goldPerClick
-  document.getElementById("goldMined").innerHTML = gameData.gold + " Gold Mined"
+function recollectRock() {
+  RockData.rocks += RockData.rockPerClick
+   document.getElementById("RocksRecollected").innerHTML = RockData.rocks + " Rocks Recollected"
 }
 
-function buyGoldPerClick() {
-  if (gameData.gold >= gameData.goldPerClickCost) {
-    gameData.gold -= gameData.goldPerClickCost
-    gameData.goldPerClick += 1
-    gameData.goldPerClickCost *= 2
-    document.getElementById("goldMined").innerHTML = gameData.gold + " Gold Mined"
-    document.getElementById("perClickUpgrade").innerHTML = "Upgrade Pickaxe (Currently Level " + gameData.goldPerClick + ") Cost: " + gameData.goldPerClickCost + " Gold"
+function buyRockPerClick() {
+  if (RockData.rocks >= RockData.rockPerClickCost) {
+    RockData.rocks -= RockData.rockPerClickCost
+    RockData.rockPerClick += 1
+    RockData.rockPerClickCost *= 2
+    document.getElementById("RocksRecollected").innerHTML = RockData.rocks + " Rocks Recollected"
+    document.getElementById("perClickRockUpgrade").innerHTML = "Send People to Recollect Rocks (" + RockData.rockPerClick + ") (" + RockData.rockPerClickCost + ")"
   }
-}
-var saveGameLoop = window.setInterval(function() {
-  localStorage.setItem('goldMinerSave', JSON.stringify(gameData))
-}, 15000)
-var savegame = JSON.parse(localStorage.getItem("goldMinerSave"))
-if (savegame !== null) {
-  gameData = savegame
 }
