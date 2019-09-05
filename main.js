@@ -36,6 +36,14 @@ function buyRockPerSecond() {
   }
 }
 
+function tab(tab) {
+  document.getElementById("RockMenu").style.display = "none"
+  document.getElementById("shopMenu").style.display = "none"
+  document.getElementById("others").style.display = "none"
+  document.getElementById(tab).style.display = "inline-block"
+}
+tab("RockMenu")
+
 var GameLoop = window.setInterval(function() {
   SecondRock()
 }, 1000)

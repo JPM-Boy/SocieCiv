@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+  <head> <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
     <title>SocieCiv</title>
   </head>
   <body>
-    <p id="RocksRecollected">0 Rocks Recollected</p>
-    <button onclick="recollectRock()">Recollect Rocks</button>
-    <button onclick="buyRockPerClick()" id="perClickRockUpgrade">Send People to Recollect Rocks (1) (50 Rocks)</button>
-    <button onclick="buyRockPerSecond()" id="perSecondRockUpgrade">Rock Field (1) (100 Rocks)</button>
+    <p id="RocksRecollected" class="rocks-recollected">0 Rocks Recollected</p>
+    <div id="navigateButtons">
+      <button onclick="tab('RockMenu')">Go to Rocky Area</button>
+      <button onclick="tab('shopMenu')">Go to Shop</button>
+      <button onclick="tab('others')">Go to Others</button>
+    </div>
+    <div id="RockMenu">
+      <button onclick="recollectRock()">Recollect Rocks</button>
+    </div>
+    <div id="shopMenu">
+      <button onclick="buyRockPerClick()" id="perClickRockUpgrade">Send People to Recollect Rocks (1) (50 Rocks)</button>
+      <button onclick="buyRockPerSecond()" id="perSecondRockUpgrade">Rock Field (1) (100 Rocks)</button>
+    </div>
+    <div id="others">
+      <button onClick="window.location='https://discord.gg/8DzRw57'" >Official Discord Server</button>
+    </div>
     <script src="main.js" charset="utf-8" type="text/javascript"></script>
   </body>
 </html>
